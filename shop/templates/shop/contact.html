@@ -1,0 +1,225 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%}Contact{% endblock %}
+{% block body %}
+
+<style>
+    :root {
+  --primary-color: #000000;
+  --secondary-color: #000000;
+  --bg-color: #FCFDFD;
+  --button-color: #060606;
+  --h1-color: #000000;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-container {
+  display: flex;
+  width: 100vw;
+  height: 87vh;
+  background: var(--bg-color);
+}
+
+.left-col {
+  width: 45vw;
+  height: 682px;
+  background-image: url("https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  width: 15rem;
+  padding: .5rem;
+  margin:2rem;
+}
+
+.right-col {
+  background: var(--bg-color);
+  width: 50vw;
+  height: 80vh;
+  padding: 2.5rem 3.5rem;
+}
+
+h1, label, button, .description {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  color:var(--h1-color);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+  font-weight: bold;
+}
+
+p {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  letter-spacing: 0.01rem;
+  width: 40vw;
+  margin: 0.25rem 0;
+}
+
+label, .description {
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+
+/* form {
+  /* width: 3.25rem; */
+  /* position: relative; */
+  /* margin-top: 0rem; */
+  /* padding: 0rem 0; */
+ /* }  */
+
+input, textarea, label {
+  width: 40vw;
+  display: block;
+  font-weight: bold;
+}
+label{
+  font-size:20px;
+}
+
+p, input, textarea {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--primary-color);
+}
+
+ .name{
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--bg-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 0.5rem 0;
+  margin-bottom: 0rem;
+  outline: none;
+} 
+ .name{
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--bg-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  outline: none;
+} 
+ .message{
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--bg-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  outline: none;
+} 
+ .email{
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--bg-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  outline: none;
+} 
+ .phone{
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--bg-color);
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  outline: none;
+} 
+
+textarea {
+  resize: none;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: 300;
+  background: var(--button-color);
+  color: var(--bg-color);
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+} 
+
+input:hover, textarea:hover, button:hover {
+  opacity: 0.5;
+}
+
+button:active {
+  opacity: 0.8;
+} 
+
+#contact-form{
+  margin-top: 40px;
+  
+}  
+
+
+/* Toggle Switch */
+
+.description {
+    margin-left: 1.25rem;
+  }  
+
+</style>
+
+<div class="contact-container">
+    <div class="left-col">
+        <img class="logo" src="https://www.indonesia.travel/content/dam/indtravelrevamp/en/logo.png" />
+    </div>
+    <div class="right-col">
+        <h1>Contact us</h1>
+        <p>Planning to visit Indonesia soon? Get insider tips on where to go, things to do and find best deals for your
+            next adventure.</p>
+
+        <form id="contact-form" method="post" action="/shop/contact/">{% csrf_token %}
+            <label for="name">Full name</label>
+            <input type="text" class="name" name="name" placeholder="Your Full Name" required>
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="phone" name="phone" placeholder="phone number" required>
+            <label for="email">Email Address</label>
+            <input type="email" class="email" name="email" placeholder="Your Email Address">
+            <label for="message">Message</label>
+            <textarea rows="4" placeholder="Your Message" class="message" name="message" required></textarea>
+            <button type="submit" id="submit" name="submit">Send</button>
+            <!-- <a href="javascript:void(0)">
+          </a> -->
+            
+
+        </form>
+    </div>
+</div>
+<script>
+  document.getElementById('').innerHTML = sum;
+    $('#itemsJson').val(JSON.stringify(cart)); {% if thank %}
+    alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
+    localStorage.clear();
+    document.location = "/shop"; {% endif %}
+</script>
+{% endblock %}
